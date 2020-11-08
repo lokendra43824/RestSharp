@@ -102,7 +102,7 @@ namespace UnitTestProject1
 
 
         }
-          [TestMethod]
+      //    [TestMethod]
         public void TakeEmployeeId_updateEmployeeName()
         {
             RestRequest request = new RestRequest("/Employee/10", Method.PUT);
@@ -123,6 +123,17 @@ namespace UnitTestProject1
             Assert.AreEqual("Ajay", dataresponse.name);
             Assert.AreEqual("80000", dataresponse.salary);
 
+        }
+           [TestMethod]
+        public void TakeEmployeeId_deleteEmployee()
+        {
+            RestRequest request = new RestRequest("/employee/14", Method.DELETE);
+
+            IRestResponse response = client.Execute(request);
+
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+
+            Console.WriteLine(response.Content);
         }
 
 
