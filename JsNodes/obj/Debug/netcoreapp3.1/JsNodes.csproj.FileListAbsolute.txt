@@ -1,0 +1,12 @@
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\bin\Debug\netcoreapp3.1\JsNodes.exe
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\bin\Debug\netcoreapp3.1\JsNodes.deps.json
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\bin\Debug\netcoreapp3.1\JsNodes.runtimeconfig.json
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\bin\Debug\netcoreapp3.1\JsNodes.runtimeconfig.dev.json
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\bin\Debug\netcoreapp3.1\JsNodes.dll
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\bin\Debug\netcoreapp3.1\JsNodes.pdb
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\obj\Debug\netcoreapp3.1\JsNodes.AssemblyInfoInputs.cache
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\obj\Debug\netcoreapp3.1\JsNodes.AssemblyInfo.cs
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\obj\Debug\netcoreapp3.1\JsNodes.csproj.CoreCompileInputs.cache
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\obj\Debug\netcoreapp3.1\JsNodes.dll
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\obj\Debug\netcoreapp3.1\JsNodes.pdb
+C:\Users\NAGENDRA AND JANAKI\source\repos\JsNodes\JsNodes\obj\Debug\netcoreapp3.1\JsNodes.genruntimeconfig.cache
