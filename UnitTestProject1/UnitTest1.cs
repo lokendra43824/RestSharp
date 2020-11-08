@@ -40,10 +40,10 @@ namespace UnitTestProject1
             return response;
         }
 
-        [TestMethod]
+       // [TestMethod]
         public void givenEmployeeOnPost_returnAddedEmployee()
         {
-            RestRequest request = new RestRequest("/employee", Method.POST);
+            RestRequest request = new RestRequest("/Employee", Method.POST);
             JObject jObject = new JObject();
 
             jObject.Add("name", "lokendra");
@@ -64,7 +64,44 @@ namespace UnitTestProject1
             Assert.AreEqual("40000", dataresponse.salary);
 
         }
+        [TestMethod]
+        public void givenMutipleEmployees_returnAddedEmployees()
+        {
+            List<EmployeeDetails> employee = new List<EmployeeDetails>();
+            employee.Add(new EmployeeDetails("karan", "50000"));
+            employee.Add(new EmployeeDetails("saurabh", "60000"));
 
+            foreach (var emp in employee)
+            {
+
+
+
+                RestRequest request = new RestRequest("/Employee", Method.POST);
+
+                JObject jObject = new JObject();
+                jObject.Add("name", emp.name);
+                jObject.Add("salary", emp.salary);
+
+                request.AddParameter("application/json", jObject, ParameterType.RequestBody);
+
+
+                IRestResponse response = client.Execute(request);
+                Assert.AreEqual(response.StatusCode, HttpStatusCode.Created);
+
+            }
+
+            IRestResponse newResponse = getEmployeeList();
+
+            Assert.AreEqual(newResponse.StatusCode, HttpStatusCode.OK);
+
+            List<EmployeeDetails> dataresponse = JsonConvert.DeserializeObject<List<EmployeeDetails>>(newResponse.Content);
+
+            Assert.AreEqual(21, dataresponse.Count);
+
+            Console.WriteLine(newResponse.Content);
+
+
+        }
 
 
     }
