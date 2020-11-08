@@ -17,7 +17,7 @@ namespace UnitTestProject1
         RestClient client = new RestClient(" http://localhost:3000");
 
        // [TestMethod]
-        public void GetTheRecords()
+        public void GetTheList()
         {
 
             IRestResponse response = getEmployeeList();
@@ -41,7 +41,7 @@ namespace UnitTestProject1
         }
 
        // [TestMethod]
-        public void givenEmployeeOnPost_returnAddedEmployee()
+        public void AddEmployee_returnAddedEmployee()
         {
             RestRequest request = new RestRequest("/Employee", Method.POST);
             JObject jObject = new JObject();
@@ -64,8 +64,8 @@ namespace UnitTestProject1
             Assert.AreEqual("40000", dataresponse.salary);
 
         }
-        [TestMethod]
-        public void givenMutipleEmployees_returnAddedEmployees()
+       // [TestMethod]
+        public void AddMutipleEmployees_returnAddedEmployees()
         {
             List<EmployeeDetails> employee = new List<EmployeeDetails>();
             employee.Add(new EmployeeDetails("karan", "50000"));
@@ -100,6 +100,28 @@ namespace UnitTestProject1
 
             Console.WriteLine(newResponse.Content);
 
+
+        }
+          [TestMethod]
+        public void TakeEmployeeId_updateEmployeeName()
+        {
+            RestRequest request = new RestRequest("/Employee/10", Method.PUT);
+            JObject jObject = new JObject();
+
+            jObject.Add("name", "Ajay");
+            jObject.Add("salary", "80000");
+
+
+            request.AddParameter("application/json", jObject, ParameterType.RequestBody);
+
+
+            IRestResponse response = client.Execute(request);
+            Assert.AreEqual(response.StatusCode, HttpStatusCode.OK);
+
+            EmployeeDetails dataresponse = JsonConvert.DeserializeObject<EmployeeDetails>(response.Content);
+
+            Assert.AreEqual("Ajay", dataresponse.name);
+            Assert.AreEqual("80000", dataresponse.salary);
 
         }
 
